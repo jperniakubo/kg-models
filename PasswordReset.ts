@@ -10,7 +10,7 @@ import {
   ForeignKey
 } from 'sequelize-typescript';
 
-import {Users} from './Users';
+import {BoAdmin} from './BoAdmin';
 
 @Table({timestamps: true, tableName: 'passwordReset'})
 export class PasswordReset extends Model<PasswordReset> {
@@ -21,7 +21,7 @@ export class PasswordReset extends Model<PasswordReset> {
   @Column(DataType.STRING)
   public code!: string;
 
-  @ForeignKey(() => Users)
+  @ForeignKey(() => BoAdmin)
   @Column(DataType.STRING)
   uid!: string;
 
